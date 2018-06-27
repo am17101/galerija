@@ -5,7 +5,7 @@
   {!! Form::open(['url' => 'contact/submit']) !!}
 
       <div class="form-group">
-        {{Form::label('name', 'Name')}}
+        {{  Form::label('name', 'Name')}}
         {{Form::text('name', '',['class' => 'form-control', 'placeholder' =>'Ievadi vārdu!'])}}
       </div>
 

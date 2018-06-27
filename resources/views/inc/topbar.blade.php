@@ -1,12 +1,64 @@
-<div class="top-bar">
-  <div class="row">
-    <div class="top-bar-left">
-      <ul class="menu">
-        <li class="menu-text">Galerija</li>
-        <li><a href="/">Sākums</a></li>
-        <li><a href="/albums/create">Izveidot Albumu</a></li>
-        <li><a href="/contact">Sazinies ar adminu!</a></li>
-      </ul>
+
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+
+            <!-- Collapsed Hamburger -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+
+                <span class="icon-bar"></span>
+
+            </button>
+
+            <!-- Branding Image -->
+            <a class="navbar-brand" href="{{ url('/') }}">
+                {{ config('am17101', 'Sākums') }}
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <!-- Left Side Of Navbar -->
+            <ul class="nav navbar-nav">
+                &nbsp;
+            </ul>
+
+            <ul class="nav navbar-nav">
+
+
+              
+            </ul>
+
+            <!-- Right Side Of Navbar -->
+            <ul class="nav navbar-nav navbar-right">
+                <!-- Authentication Links -->
+                @if (Auth::guest())
+                    <li><a href="{{ route('login') }}">Ienāc</a></li>
+                    <li><a href="{{ route('register') }}">Reģistrējies</a></li>
+                @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/dashboard">Dashboard</a></li>
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
+            </ul>
+        </div>
     </div>
-  </div>
-</div>
+</nav>

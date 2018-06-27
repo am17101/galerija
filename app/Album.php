@@ -13,4 +13,8 @@ class Album extends Model
     public function photos(){
       return $this->hasMany('App\Photo');
     }
+
+    public function admin(){
+      return $this->belongsTo('App\Admin');
+    }
 }

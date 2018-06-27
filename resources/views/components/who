@@ -1,0 +1,17 @@
+@if(Auth::guard('web')->check())
+
+<p class="text-success">Tu esi ielogojies kā <strong> useris </strong></p>
+@else
+<p class="text-danger">Tu esi izlogojies kā <strong> useris </strong></p>
+
+
+@endif
+
+@if(Auth::guard('admin')->check())
+
+<p class="text-success">Tu esi ielogojies kā <strong> admins </strong></p>
+@else
+<p class="text-danger">Tu esi izlogojies kā <strong> admins </strong></p>
+
+
+@endif

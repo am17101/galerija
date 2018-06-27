@@ -1,19 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
+<html lang="{{ app()->getLocale() }}">
+<head>
     <meta charset="utf-8">
-    <title>am17101</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css">
-  </head>
-  <body>
-     @include('inc.topbar')
-     <br>
-    <div class="row">
-       @include('inc.messages')
-      @yield('content')
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('am17101', 'am17101') }}</title>
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
+<body>
+
+  <center>
+    <div id="app">
+        @include('inc.topbar')
+      <p>  Vēlies sazināties ar lapas administratoru? Reģistrējies, ja to vēl neesi izdarījis! Ja esi, tad ielogojies!</p>
+        <div class="container">
+            @include('inc.messages')
+            @yield('content')
+        </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'article-ckeditor' );
+    </script>
     <footer id="footer" class="text-center">
 <p>Copyright 2018 &copy; Agneta Meiksane</p>
-    </footer>
-  </body>
+ </footer>
+</center>
+</body>
 </html>
