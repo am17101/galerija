@@ -58,6 +58,9 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
+            .img{
+              width: 50px;
+            }
 
             .m-b-md {
                 margin-bottom: 30px;
@@ -80,7 +83,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                  <div class="panel">      
+                  <div class="panel">
                       @component('components.who')
                       @endcomponent
 

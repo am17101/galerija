@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Message;
+use Gate;
+
 class ContactMessageController extends Controller
 {
   public function create(){
@@ -35,6 +37,7 @@ class ContactMessageController extends Controller
   }
 
 public function getMessages(){
+
   $messages = Message::all();
 
   return view('messages')->with('messages', $messages);

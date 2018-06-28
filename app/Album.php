@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Admin;
 
 class Album extends Model
 {
@@ -14,7 +15,5 @@ class Album extends Model
       return $this->hasMany('App\Photo');
     }
 
-    public function admin(){
-      return $this->belongsTo('App\Admin');
-    }
+    
 }

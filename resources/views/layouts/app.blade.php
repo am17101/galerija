@@ -13,18 +13,24 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+<style>
+.img{
+  width: 20px;
+}
+
+</style>
 <body>
 
   <center>
     <div id="app">
         @include('inc.topbar')
-      <p>  Vēlies sazināties ar lapas administratoru? Reģistrējies, ja to vēl neesi izdarījis! Ja esi, tad ielogojies!</p>
+
         <div class="container">
             @include('inc.messages')
             @yield('content')
         </div>
     </div>
-
+<p>  Vēlies sazināties ar lapas administratoru? Reģistrējies, ja to vēl neesi izdarījis! Ja esi, tad ielogojies!</p>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>

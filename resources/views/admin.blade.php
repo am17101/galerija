@@ -17,8 +17,10 @@
 
 
                     Tu esi ielogojies kā <strong>ADMIN</strong>
-                <a href="/albums/create" class="btn btn-primary">Izveido albumu</a>
-                  
+
+                    <p>Skatīt saņemtās vēstules</p>
+                <a  href="/messages" class="btn btn-primary">Messages</a>
+
 
 
                 </div>

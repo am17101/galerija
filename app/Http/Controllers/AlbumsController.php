@@ -42,8 +42,8 @@ class AlbumsController extends Controller
       $album->description = $request -> input('description');
       $album->cover_image = $fileNameToStore;
 
-      $album->admin_id = auth()->admin()->id;
 
+    
 
       $album->save();
       return redirect('/albums')->with('success', 'Albums ir izveidots');
@@ -56,4 +56,9 @@ class AlbumsController extends Controller
     $album = Album::with('photos')-> find($id);
     return view('albums.show')->with('album',$album);
   }
+
+
+
+
+
 }

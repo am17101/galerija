@@ -27,8 +27,6 @@ class Admin extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function albums(){
-      return $this->hasMany('App\Album');
-    }
+    
 
 }
